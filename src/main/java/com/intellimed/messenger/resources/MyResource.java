@@ -1,4 +1,4 @@
-package com.intellimed.messenger.messenger_jax_rs;
+package com.intellimed.messenger.resources;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
