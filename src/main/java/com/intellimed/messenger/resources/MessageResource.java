@@ -23,14 +23,16 @@ public class MessageResource {
 */
 	
 	 @GET
-	 @Produces(MediaType.APPLICATION_XML)
+	 //@Produces(MediaType.APPLICATION_XML)
+	 @Produces(MediaType.APPLICATION_JSON)
 	 public List<Message> getMessages(){
 		 return messageService.getAllMessages();
 	 }
 	 
 	 @GET
 	 @Path("/{messageId}")
-	 @Produces(MediaType.APPLICATION_XML)
+	 //@Produces(MediaType.APPLICATION_XML)
+	 @Produces(MediaType.APPLICATION_JSON)
 	 public Message getMessages(@PathParam("messageId") long messageId){
 		 return messageService.getMessage(messageId);
 	 }
