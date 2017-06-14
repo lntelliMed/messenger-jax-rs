@@ -78,6 +78,8 @@ public class Message {
 	public void setComments(Map<Long, Comment> comments) {
 		this.comments = comments;
 	}
+
+
 	
 	
 }
