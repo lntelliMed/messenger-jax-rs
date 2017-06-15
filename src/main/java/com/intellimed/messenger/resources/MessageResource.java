@@ -19,6 +19,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.core.Response.Status;
 
+import com.intellimed.messenger.exception.DataNotFoundException;
 import com.intellimed.messenger.model.Message;
 import com.intellimed.messenger.resources.beans.MessageFilterBean;
 import com.intellimed.messenger.service.MessageService;
@@ -73,7 +74,11 @@ public class MessageResource {
 	 //@Produces(MediaType.APPLICATION_XML)
 	 //@Produces(MediaType.APPLICATION_JSON)
 	 public Message getMessage(@PathParam("messageId") long messageId){
-		 return messageService.getMessage(messageId);
+		 Message message = messageService.getMessage(messageId);
+		 if (message == null){
+			 throw new DataNotFoundException("Message with id " + messageId + " not found!");
+		 }
+		 return message;
 	 }
 	 
 /*	 @POST
