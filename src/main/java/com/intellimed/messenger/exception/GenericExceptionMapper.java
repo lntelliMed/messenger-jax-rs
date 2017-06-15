@@ -6,7 +6,7 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 import com.intellimed.messenger.model.ErrorMessage;
 
-@Provider
+//@Provider// disable in order to try the WebApplicationException
 public class GenericExceptionMapper implements ExceptionMapper<Throwable> {
 	@Override
 	public Response toResponse(Throwable exception) {
